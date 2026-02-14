@@ -12,5 +12,9 @@
   "mimeTypes": {
     ".woff": "font/woff",
     ".woff2": "font/woff2"
+  },
+  "build": {
+    "appLocation": "app",
+    "outputLocation": ""
   }
 }
