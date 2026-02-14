@@ -1,0 +1,9 @@
+{
+  "configurations": {
+    "default": {
+      "appLocation": "app",
+      "apiLocation": "",
+      "outputLocation": "app"
+    }
+  }
+}

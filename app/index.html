@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karmyogi Global - Integrated Agri-Tech & Market Linkage Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;400;500;600;700;800;900&family=Spectral:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --accent-green: #6b9b37;
+            --light-green: #a8c686;
+            --earth-brown: #8b6f47;
+            --warm-cream: #f4ede4;
+            --sky-blue: #e8f3f1;
+            --text-dark: #1a1a1a;
+            --text-mid: #4a4a4a;
+            --border-subtle: rgba(45, 80, 22, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Darker Grotesque', sans-serif;
+            color: var(--text-dark);
+            background: var(--warm-cream);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1a3a0f 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, var(--light-green) 35px, var(--light-green) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, var(--light-green) 35px, var(--light-green) 70px);
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 60px 80px;
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(168, 198, 134, 0.2);
+            border: 1px solid rgba(168, 198, 134, 0.4);
+            color: var(--light-green);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.3s backwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-title {
+            font-family: 'Spectral', serif;
+            font-size: clamp(48px, 7vw, 92px);
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(22px, 3vw, 32px);
+            color: var(--light-green);
+            font-weight: 500;
+            margin-bottom: 40px;
+            max-width: 900px;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .collaboration-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 16px 28px;
+            border-radius: 12px;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 50px;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        .collaboration-tag svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--accent-green);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            animation: fadeInUp 1s ease-out 1s backwards;
+        }
+
+        .stat-item {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: white;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: var(--light-green);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section {
+            padding: 100px 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-label {
+            color: var(--accent-green);
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-family: 'Spectral', serif;
+            font-size: clamp(38px, 5vw, 56px);
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 20px;
+            color: var(--text-mid);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .dual-track-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .track-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 4px 40px rgba(45, 80, 22, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 60px rgba(45, 80, 22, 0.15);
+        }
+
+        .track-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-green), var(--light-green));
+        }
+
+        .track-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: var(--sky-blue);
+            border-radius: 50%;
+            color: var(--primary-green);
+            font-size: 28px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .track-title {
+            font-family: 'Spectral', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .track-description {
+            font-size: 18px;
+            color: var(--text-mid);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .track-features {
+            list-style: none;
+        }
+
+        .track-features li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            font-size: 17px;
+            color: var(--text-dark);
+        }
+
+        .track-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 900;
+            font-size: 20px;
+        }
+
+        .projections-wrap {
+            background: linear-gradient(180deg, #ffffff 0%, #f7fbf6 100%);
+            border-radius: 28px;
+            padding: 70px 60px;
+            box-shadow: 0 10px 60px rgba(45, 80, 22, 0.12);
+            border: 1px solid rgba(45, 80, 22, 0.08);
+        }
+
+        .projections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .projection-card {
+            background: white;
+            border-radius: 22px;
+            padding: 32px 30px 28px;
+            border: 1px solid rgba(45, 80, 22, 0.08);
+            box-shadow: 0 8px 30px rgba(45, 80, 22, 0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .projection-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(168, 198, 134, 0.2), transparent 60%);
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .projection-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 50px rgba(45, 80, 22, 0.14);
+        }
+
+        .projection-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(45, 80, 22, 0.08);
+            color: var(--primary-green);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            border-radius: 999px;
+            margin-bottom: 14px;
+        }
+
+        .projection-title {
+            font-family: 'Spectral', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 14px;
+        }
+
+        .projection-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
+        }
+
+        .projection-list li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        .projection-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .projection-note {
+            font-size: 14px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        .bridge-block {
+            margin-top: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(45, 80, 22, 0.08) 0%, rgba(168, 198, 134, 0.18) 100%);
+            border-radius: 24px;
+            padding: 56px 50px;
+            max-width: 1050px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(45, 80, 22, 0.12);
+            box-shadow: 0 20px 70px rgba(45, 80, 22, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bridge-block::before {
+            content: '';
+            position: absolute;
+            inset: -40% -20% auto auto;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(168, 198, 134, 0.25), transparent 70%);
+            pointer-events: none;
+        }
+
+        .bridge-title {
+            font-family: 'Spectral', serif;
+            font-size: 30px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+
+        .bridge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+            text-align: left;
+        }
+
+        .bridge-card {
+            background: white;
+            border-radius: 16px;
+            padding: 26px;
+            border: 1px solid rgba(45, 80, 22, 0.08);
+            box-shadow: 0 10px 30px rgba(45, 80, 22, 0.08);
+        }
+
+        .bridge-kicker {
+            font-size: 12px;
+            color: var(--accent-green);
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .bridge-name {
+            font-family: 'Spectral', serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 10px;
+        }
+
+        .bridge-text {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .bridge-note {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.7;
+            margin-top: 20px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .impact-card {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1e4812 100%);
+            border-radius: 16px;
+            padding: 40px 32px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .impact-card:hover {
+            transform: scale(1.05);
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .impact-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            fill: var(--light-green);
+        }
+
+        .impact-value {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            line-height: 1;
+        }
+
+        .impact-label {
+            font-size: 16px;
+            color: var(--light-green);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .model-section {
+            background: white;
+            border-radius: 30px;
+            padding: 80px 60px;
+            box-shadow: 0 8px 60px rgba(45, 80, 22, 0.1);
+        }
+
+        .model-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 30px;
+            border-radius: 16px;
+            background: var(--sky-blue);
+            transition: background 0.3s ease;
+        }
+
+        .highlight-item:hover {
+            background: var(--light-green);
+        }
+
+        .highlight-value {
+            font-size: 36px;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .highlight-text {
+            font-size: 16px;
+            color: var(--text-mid);
+            font-weight: 600;
+        }
+
+        .timeline-container {
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent-green) 0%, var(--light-green) 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .timeline-item:nth-child(even) .timeline-empty {
+            grid-column: 2;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(45, 80, 22, 0.1);
+            position: relative;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 30px;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-green);
+            border: 5px solid var(--warm-cream);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-phase {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .timeline-title {
+            font-family: 'Spectral', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 16px;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            color: var(--text-mid);
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, #1a3a0f 100%);
+            border-radius: 30px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(168, 198, 134, 0.03) 50px, rgba(168, 198, 134, 0.03) 100px);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-title {
+            font-family: 'Spectral', serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .cta-subtitle {
+            font-size: 20px;
+            color: var(--light-green);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-green);
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            background: var(--light-green);
+            color: white;
+        }
+
+        footer {
+            background: var(--primary-green);
+            color: var(--light-green);
+            padding: 60px 60px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Spectral', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-partnership {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(168, 198, 134, 0.2);
+            padding-top: 30px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 968px) {
+            .dual-track-container {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-empty {
+                grid-column: 1;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .timeline-empty {
+                display: none;
+            }
+
+            .section {
+                padding: 60px 30px;
+            }
+
+            .hero-content {
+                padding: 80px 30px 60px;
+            }
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(45, 80, 22, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 60px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: 'Spectral', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-bar {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Karmyogi Global</a>
+            <ul class="nav-links">
+                <li><a href="#products">Our Platforms</a></li>
+                <li><a href="#approach">Our Approach</a></li>
+                <li><a href="#projections">Impact Targets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Integrated Agri-Tech Platform</div>
+            <h1 class="hero-title">Transforming Indian Agriculture Through Technology & Market Linkages</h1>
+            <p class="hero-subtitle">Empowering farmers with export-quality production systems, precision agriculture, and direct market access</p>
+            
+            <div class="collaboration-tag">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                In Collaboration with ICAR-IIVR, Varanasi
+            </div>
+
+
+        </div>
+    </section>
+
+ 
+
+    <section class="section" id="products">
+        <div class="section-header">
+            <div class="section-label">Our Digital Platforms</div>
+            <h2 class="section-title">Technology Bridging Research & Practice</h2>
+            <p class="section-description">We've developed two complementary platforms that bring ICAR research to farmers' fields and enable evidence-based agricultural advancement</p>
+        </div>
+
+        <div class="dual-track-container">
+            <div class="track-card" style="background: linear-gradient(135deg, #f5f9fd 0%, white 100%);">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--primary-green)" stroke-width="2" fill="var(--sky-blue)"/>
+                        <path d="M9 9h6M9 13h6M9 17h3" stroke="var(--accent-green)" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="track-title" style="margin-bottom: 4px;">DARPAN™</h3>
+                        <div style="color: var(--accent-green); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Research Platform</div>
+                    </div>
+                </div>
+                <p class="track-description">DARPAN™ (Digital Agriculture Research Platform for Analysis & Normalization) is a secure, India-hosted platform for agriculture research institutions to standardize and analyze crop trial data.</p>
+                <ul class="track-features">
+                    <li>Secure capture of crop trial data across locations</li>
+                    <li>Multi-season data standardization and normalization</li>
+                    <li>Consistent evaluation frameworks for research</li>
+                    <li>Comparative analysis across trials and geographies</li>
+                    <li>Scalable insights for evidence-based recommendations</li>
+                    <li>India-hosted with complete data sovereignty</li>
+                    <li><strong>Purpose-built for ICAR and research institutions</strong></li>
+                </ul>
+            </div>
+
+            <div class="track-card" style="background: linear-gradient(135deg, #f8fdf5 0%, white 100%);">
+                <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z" fill="var(--accent-green)" opacity="0.6"/>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--primary-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div>
+                        <h3 class="track-title" style="margin-bottom: 4px;">UNNATI</h3>
+                        <div style="color: var(--accent-green); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Farmer Platform</div>
+                    </div>
+                </div>
+                <p class="track-description">A digital agronomy platform that empowers farmers with SOP-based crop management, timely interventions, and FPO-level reporting through close agronomist & pathologist collaboration</p>
+                <ul class="track-features">
+                    <li>SOP-based crop management guidance</li>
+                    <li>Timely intervention alerts and recommendations</li>
+                    <li>Cluster and FPO-level performance reporting</li>
+                    <li>Close collaboration with field agronomists & pathologists</li>
+                    <li>Improved productivity and consistency tracking</li>
+                    <li>Market readiness compliance monitoring</li>
+                    <li><strong>100% Free and accessible to all farmers</strong></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div style="margin-top: 60px; background: var(--warm-cream); border-radius: 30px; padding: 70px 60px; position: relative; overflow: visible;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, var(--primary-green) 20px, var(--primary-green) 40px); border-radius: 30px;"></div>
+            
+            <h3 style="font-family: 'Spectral', serif; font-size: 36px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px; text-align: center; position: relative; z-index: 2;">
+                Bridging Research and Practice
+            </h3>
+            <p style="font-size: 18px; color: var(--text-mid); line-height: 1.7; text-align: center; margin-bottom: 60px; position: relative; z-index: 2; max-width: 900px; margin-left: auto; margin-right: auto;">
+                Separation of concerns, one fuels the other: research insights flow into execution, and field outcomes loop back to improve SOPs.
+            </p>
+
+            <div style="position: relative; max-width: 1100px; margin: 0 auto;">
+                <!-- Circular Arrow SVG Overlay -->
+                <svg style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; z-index: 1; pointer-events: none;" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Main circular flow path -->
+                    
+                    
+                    <!-- Arrow markers -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <polygon points="0 0, 10 3, 0 6" fill="var(--accent-green)" />
+                        </marker>
+                    </defs>
+                    
+                   
+                </svg>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative; z-index: 2;">
+                    <div style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); position: relative; overflow: hidden; border-top: 4px solid var(--accent-green);">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 12px;">RESEARCH ENGINE</div>
+                        <h4 style="font-family: 'Spectral', serif; font-size: 36px; font-weight: 700; color: var(--primary-green); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
+                            DARPAN<span style="font-size: 20px; vertical-align: super; opacity: 0.7;">™</span>
+                        </h4>
+                        <p style="font-size: 17px; color: var(--text-dark); line-height: 1.7; margin-bottom: 28px; font-weight: 500;">
+                            Powers rigorous trials and evidence-based SOPs with ICAR-IIVR and research partners.
+                        </p>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 16px; padding: 22px 20px; background: linear-gradient(135deg, var(--sky-blue), #e0f2ed); border-radius: 14px; border-left: 5px solid var(--accent-green);">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; margin-top: 2px;">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="var(--primary-green)" stroke-width="1.8" fill="var(--accent-green)" opacity="0.25"/>
+                                <path d="M8 8h8M8 12h8M8 16h5" stroke="var(--primary-green)" stroke-width="1.8" stroke-linecap="round"/>
+                            </svg>
+                            <div style="flex: 1;">
+                                <div style="font-size: 15px; color: var(--primary-green); line-height: 1.6; font-weight: 600; margin-bottom: 4px;">
+                                    Secure, India-hosted platform
+                                </div>
+                                <div style="font-size: 14px; color: var(--text-mid); line-height: 1.5;">
+                                    Multi-location crop trials with standardized data capture and comparative analysis
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); position: relative; overflow: hidden; border-top: 4px solid var(--accent-green);">
+                        <div style="font-size: 12px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 12px;">FIELD EXECUTION</div>
+                        <h4 style="font-family: 'Spectral', serif; font-size: 36px; font-weight: 700; color: var(--primary-green); margin-bottom: 20px;">
+                            UNNATI
+                        </h4>
+                        <p style="font-size: 17px; color: var(--text-dark); line-height: 1.7; margin-bottom: 28px; font-weight: 500;">
+                            Translates SOPs into stage-wise farmer guidance, ensuring consistent quality and compliant production.
+                        </p>
+                        
+                        <div style="display: flex; align-items: flex-start; gap: 16px; padding: 22px 20px; background: linear-gradient(135deg, var(--sky-blue), #e0f2ed); border-radius: 14px; border-left: 5px solid var(--accent-green);">
+                            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0; margin-top: 2px;">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" fill="var(--accent-green)" opacity="0.5"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="var(--primary-green)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <div style="flex: 1;">
+                                <div style="font-size: 15px; color: var(--primary-green); line-height: 1.6; font-weight: 600; margin-bottom: 4px;">
+                                    100% free for farmers
+                                </div>
+                                <div style="font-size: 14px; color: var(--text-mid); line-height: 1.5;">
+                                    Real-time agronomist support with cluster-level reporting and compliance tracking
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Center feedback indicator -->
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 3px solid var(--accent-green); border-radius: 50%; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(45, 80, 22, 0.2); z-index: 3;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--accent-green)" stroke-width="2"/>
+                        <path d="M8 12L11 15L16 9" stroke="var(--primary-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div style="font-size: 11px; font-weight: 700; color: var(--primary-green); text-align: center; margin-top: 6px; letter-spacing: 0.5px;">
+                        CONTINUOUS<br/>FEEDBACK
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="section" id="approach" style="background: white;">
+        <div class="section-header">
+            <div class="section-label">Our Approach</div>
+            <h2 class="section-title">Respecting Tradition, Enabling Progress</h2>
+            <p class="section-description">We believe in augmenting farmers' traditional knowledge with modern research, not replacing it. Our mission is to bridge the gap between agricultural science and field practice.</p>
+        </div>
+
+        <div style="margin-top: 50px;">
+            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px;">Our Approach for Farmers</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5-5-5 1.41-1.41L11 13.67l5.59-5.59L18 9l-7 7.5z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Guided Cultivation with Assured Quality
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        Farmers receive crop-wise, stage-wise guidance based on research-backed SOPs, ensuring better yields, consistent quality, and compliance with market requirements.
+                    </p>
+                </div>
+
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3h18v2H3V3zm2 6h14l-1.5 12h-11L5 9zm3 2v6h2v-6H8zm6 0v6h2v-6h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Stable Income through Planned Production
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        Season-long crop planning and a 52-week harvest calendar reduce price volatility and enable predictable income instead of distress selling.
+                    </p>
+                </div>
+
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 4h16v12H5.17L4 17.17V4zm2 3v2h8V7H6zm0 4v2h12v-2H6z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Digital Transparency & Handholding
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        From crop planning to harvest, every activity is digitally tracked, giving farmers clarity, confidence, and continuous agronomist & plant pathologist support.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 60px;">
+            <div style="font-size: 16px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 24px;">Our Approach for Buyers</div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px;">
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l4 7h-8l4-7zm-7 9h14l-2 9H7l-2-9z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Demand-Led Supply Planning
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        Buyer demand drives crop selection, variety choice, and acreage planning—ensuring the right produce, in the right quantity, at the right time.
+                    </p>
+                </div>
+
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C7.59 2 4 5.59 4 10c0 3.73 2.4 6.92 5.7 7.76L12 22l2.3-4.24C17.6 16.92 20 13.73 20 10c0-4.41-3.59-8-8-8zm-1 11-3-3 1.41-1.41L11 10.17l4.59-4.58L17 7l-6 6z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Predictable Quality with Full Traceability
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        Research-backed SOPs and end-to-end digital traceability ensure consistent quality, compliance, and audit-ready sourcing.
+                    </p>
+                </div>
+
+                <div style="background: var(--warm-cream); border-left: 4px solid var(--accent-green); padding: 40px 32px; border-radius: 12px;">
+                    <div style="width: 56px; height: 56px; background: var(--sky-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--primary-green)" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 4h18v4H3V4zm0 6h18v10H3V10zm4 2v6h2v-6H7zm4 0v6h2v-6h-2zm4 0v6h2v-6h-2z"/>
+                        </svg>
+                    </div>
+                    <h3 style="font-family: 'Spectral', serif; font-size: 24px; font-weight: 700; color: var(--primary-green); margin-bottom: 16px;">
+                        Real-Time Visibility & Reliable Procurement
+                    </h3>
+                    <p style="font-size: 17px; color: var(--text-mid); line-height: 1.7;">
+                        Live crop-stage visibility, yield forecasting, and weekly harvest projections enable proactive planning and seamless procurement.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 80px; background: linear-gradient(135deg, var(--primary-green) 0%, #1a3a0f 100%); border-radius: 24px; padding: 60px; text-align: center;">
+            <h3 style="font-family: 'Spectral', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 700; color: white; margin-bottom: 20px;">
+                100% Digital, 100% Farmer-Centric
+            </h3>
+            <p style="font-size: 20px; color: var(--light-green); max-width: 900px; margin: 0 auto; line-height: 1.7;">
+                Every aspect of our operation—from crop planning to market linkage—is digitized for transparency, efficiency, and farmer empowerment. Technology serves farmers, not the other way around.
+            </p>
+            <p style="font-size: 18px; color: var(--light-green); max-width: 900px; margin: 16px auto 0; line-height: 1.7;">
+                UNNATI aligns farmers and buyers through planned production, verified quality, and transparent execution.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="projections">
+        <div class="section-header">
+            <div class="section-label">5-Year Impact Targets</div>
+            <h2 class="section-title">Measurable Public Good Outcomes</h2>
+            <p class="section-description">Our phased approach ensures sustainable growth with clear accountability metrics at each milestone</p>
+        </div>
+
+        <div class="projections-wrap">
+
+                  <!-- Detailed Milestone Cards -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;">
+                <!-- Year 1 -->
+                <div style="background: linear-gradient(135deg, #f8fdf5 0%, white 100%); border-radius: 16px; padding: 35px 28px; border: 2px solid var(--border-subtle); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; background: var(--accent-green); color: white; padding: 6px 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 0 0 12px 0;">YEAR 1 TARGET</div>
+                    <h4 style="font-family: 'Spectral', serif; font-size: 22px; font-weight: 700; color: var(--primary-green); margin-top: 35px; margin-bottom: 20px;">Validation, SOP Discipline</h4>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmers with income uplift</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">500+</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Direct employment</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">50+</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmer transactions</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">₹25+ Cr</div>
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Acres under management</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">500+</div>
+                    </div>
+                    <div style="background: var(--sky-blue); padding: 14px; border-radius: 10px; border-left: 3px solid var(--accent-green); margin-top: 16px;">
+                        <div style="font-size: 13px; color: var(--text-dark); line-height: 1.5;">₹80,000-₹1,00,000 uplift per farmer/year. End-to-end traceability across selected crops & clusters.</div>
+                    </div>
+                </div>
+
+                <!-- Year 3 -->
+                <div style="background: linear-gradient(135deg, #f8fdf5 0%, white 100%); border-radius: 16px; padding: 35px 28px; border: 2px solid var(--border-subtle); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; background: var(--accent-green); color: white; padding: 6px 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 0 0 12px 0;">YEAR 3 TARGET</div>
+                    <h4 style="font-family: 'Spectral', serif; font-size: 22px; font-weight: 700; color: var(--primary-green); margin-top: 35px; margin-bottom: 20px;">Multi-Cluster Scale</h4>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmers with income uplift</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">15,000-20,000</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Direct employment</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">600-800</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmer transactions</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">₹1,200-₹1,500 Cr</div>
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Acres under management</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">30,000-40,000</div>
+                    </div>
+                    <div style="background: var(--sky-blue); padding: 14px; border-radius: 10px; border-left: 3px solid var(--accent-green); margin-top: 16px;">
+                        <div style="font-size: 13px; color: var(--text-dark); line-height: 1.5;">₹1.2-₹1.5 lakh uplift per farmer/year. Buyer-linked traceability across multiple crops; adoption by FPOs, KVKs, pilot ICAR-linked programs.</div>
+                    </div>
+                </div>
+
+                <!-- Year 5 -->
+                <div style="background: linear-gradient(135deg, #f8fdf5 0%, white 100%); border-radius: 16px; padding: 35px 28px; border: 2px solid var(--primary-green); position: relative; overflow: hidden; box-shadow: 0 8px 30px rgba(45, 80, 22, 0.15);">
+                    <div style="position: absolute; top: 0; left: 0; background: var(--primary-green); color: white; padding: 6px 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 0 0 12px 0;">YEAR 5 TARGET</div>
+                    <h4 style="font-family: 'Spectral', serif; font-size: 22px; font-weight: 700; color: var(--primary-green); margin-top: 35px; margin-bottom: 20px;">Reliability & Replication</h4>
+                    
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmers with income uplift</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">1,00,000+</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Direct employment</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">3,000-4,000</div>
+                    </div>
+                    <div style="margin-bottom: 12px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Farmer transactions</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">₹10,000+ Cr annually</div>
+                    </div>
+                    <div style="margin-bottom: 16px;">
+                        <div style="font-size: 13px; color: var(--text-mid); margin-bottom: 4px;">Acres under management</div>
+                        <div style="font-size: 24px; font-weight: 900; color: var(--primary-green);">2,00,000+</div>
+                    </div>
+                    <div style="background: var(--sky-blue); padding: 14px; border-radius: 10px; border-left: 3px solid var(--primary-green); margin-top: 16px;">
+                        <div style="font-size: 13px; color: var(--text-dark); line-height: 1.5;">₹1.8-₹2.5 lakh sustained uplift per farmer/year. National-level traceability & quality benchmarks with DARPAN research feedback loops.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    
+    
+    </section>
+
+  
+    <section class="section">
+        <div class="cta-section">
+            <div class="cta-content">
+                <h2 class="cta-title">Join Us in Empowering Indian Farmers</h2>
+                <p class="cta-subtitle">Partner with us to bridge the gap between agricultural research and rural prosperity through digital innovation and market access</p>
+                <a href="https://wa.me/919620738688" class="cta-button" target="_blank" rel="noopener">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-logo">Karmyogi Global Private Limited</div>
+            
+            <p class="footer-text">
+                863 Bhisampur, Sevapuri, Varanasi - 221403, Uttar Pradesh, Bharat (India) 🇮🇳<br>
+                +91-9620738688 | info@karmyogifarm.com
+            </p>
+            <div class="footer-partnership">
+                <strong style="color: white;">In Technical Collaboration with ICAR-IIVR, Varanasi</strong><br>
+    
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Karmyogi Global Private Limited. All rights reserved.</p>
+                <p style="margin-top: 10px; font-size: 13px;">Hosted on Microsoft Azure | Domain by GoDaddy</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav-bar');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(45, 80, 22, 0.98)';
+                nav.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(45, 80, 22, 0.95)';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.track-card, .impact-card, .timeline-item, .highlight-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
