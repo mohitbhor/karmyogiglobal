@@ -732,8 +732,67 @@
             font-size: 14px;
         }
 
+        .bridge-wrapper {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .bridge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .bridge-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feedback-orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 400px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .feedback-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
         @media (max-width: 968px) {
             .dual-track-container {
+                grid-template-columns: 1fr;
+            }
+
+            .bridge-grid {
+                grid-template-columns: 1fr;
+                gap: 120px;
+            }
+
+            .feedback-badge {
+                width: 100px;
+                height: 100px;
+            }
+
+            .target-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -819,6 +878,10 @@
             }
             .nav-bar {
                 padding: 15px 30px;
+            }
+
+            .feedback-orbit {
+                display: none;
             }
         }
     </style>
@@ -922,9 +985,9 @@
                 Separation of concerns, one fuels the other: research insights flow into execution, and field outcomes loop back to improve SOPs.
             </p>
 
-            <div style="position: relative; max-width: 1100px; margin: 0 auto;">
+            <div class="bridge-wrapper">
                 <!-- Circular Arrow SVG Overlay -->
-                <svg style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 400px; z-index: 1; pointer-events: none;" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <svg class="feedback-orbit" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
                     <!-- Main circular flow path -->
                     
                     
@@ -938,8 +1001,8 @@
                    
                 </svg>
 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative; z-index: 2;">
-                    <div style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); position: relative; overflow: hidden; border-top: 4px solid var(--accent-green);">
+                <div class="bridge-grid">
+                    <div class="bridge-card" style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); border-top: 4px solid var(--accent-green);">
                         <div style="font-size: 12px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 12px;">RESEARCH ENGINE</div>
                         <h4 style="font-family: 'Spectral', serif; font-size: 36px; font-weight: 700; color: var(--primary-green); margin-bottom: 20px; display: flex; align-items: center; gap: 8px;">
                             DARPAN<span style="font-size: 20px; vertical-align: super; opacity: 0.7;">™</span>
@@ -964,7 +1027,7 @@
                         </div>
                     </div>
 
-                    <div style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); position: relative; overflow: hidden; border-top: 4px solid var(--accent-green);">
+                    <div class="bridge-card" style="background: white; border-radius: 20px; padding: 40px 35px; box-shadow: 0 10px 50px rgba(45, 80, 22, 0.15); border-top: 4px solid var(--accent-green);">
                         <div style="font-size: 12px; font-weight: 700; color: var(--accent-green); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 12px;">FIELD EXECUTION</div>
                         <h4 style="font-family: 'Spectral', serif; font-size: 36px; font-weight: 700; color: var(--primary-green); margin-bottom: 20px;">
                             UNNATI
@@ -991,7 +1054,7 @@
                 </div>
 
                 <!-- Center feedback indicator -->
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; border: 3px solid var(--accent-green); border-radius: 50%; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(45, 80, 22, 0.2); z-index: 3;">
+                <div class="feedback-badge" style="background: white; border: 3px solid var(--accent-green); border-radius: 50%; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 8px 30px rgba(45, 80, 22, 0.2);">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--accent-green)" stroke-width="2"/>
                         <path d="M8 12L11 15L16 9" stroke="var(--primary-green)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1128,7 +1191,7 @@
         <div class="projections-wrap">
 
                   <!-- Detailed Milestone Cards -->
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 40px;">
+            <div class="target-grid">
                 <!-- Year 1 -->
                 <div style="background: linear-gradient(135deg, #f8fdf5 0%, white 100%); border-radius: 16px; padding: 35px 28px; border: 2px solid var(--border-subtle); position: relative; overflow: hidden;">
                     <div style="position: absolute; top: 0; left: 0; background: var(--accent-green); color: white; padding: 6px 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; border-radius: 0 0 12px 0;">YEAR 1 TARGET</div>
